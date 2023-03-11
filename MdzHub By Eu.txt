@@ -1,0 +1,49 @@
+if game.PlaceId == 10931513550 then
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Mdz Hub 2.0 🇧🇷", HidePremium = false, SaveConfig = true, ConfigFolder = "Mdz Hub"})
+OrionLib:MakeNotification({
+	Name = "MdzHub",
+	Content = "Bem Vindo Ao Mdz Hub",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+--global
+_G.FruitTab = false
+_G.StatsTab = false
+
+--tabs
+local FruitTab = Window:MakeTab({
+    Name = "Fruit",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+local StatsTab = Window:MakeTab({
+    Name = "Stats",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+--toggle
+FruitTab:AddToggle({
+    Name = "Giro Infinito",
+    Default = false,
+    Callback = function(Value)
+        _G.FruitTab = Value
+        while _G.FruitTab==true do
+        game:GetService("Players").LocalPlayer.PlayerGui.SpinGui.LOL.Spin.Spin.Reward:FireServer(60)
+wait(0.1)
+-- Button
+StatsTab:AddButton({
+	Name = "Reset Stats",
+	Callback = function()
+      		print("button pressed")
+  	end    
+})
+        end
+    end    
+})
+
+OrionLib:Init()
+end
