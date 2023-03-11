@@ -33,7 +33,8 @@ wait(0.1)
 StatsTab:AddButton({
 	Name = "Reset Stats",
 	Callback = function()
-      		print("button pressed")   
+      		print("button pressed")
+        end   
 })
         end
     end    
